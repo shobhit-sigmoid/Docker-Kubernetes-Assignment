@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: airflow-webserver
+  labels:
+    app: airflow-k8s
+
+spec:
+  type: NodePort
+
+  selector:
+    app: airflow-webserver
+
+  ports:
+      - targetPort: 8080
+        port: 8080
